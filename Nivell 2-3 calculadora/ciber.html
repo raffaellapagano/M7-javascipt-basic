@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <!-- CUSTOM CSS -->
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="scripts/main.js"></script>
+</head>
+<body>
+
+    <div class="calculadora-grilla">
+        <div class="output">
+
+            <input class="display" type="text" id="result" placeholder="0">
+        </div>
+
+    <button id="num1" name="data-number" onclick="display_numeros(1)">1</button>
+    <button name="data-number" onclick="display_numeros(2)">2</button>
+    <button name="data-number" onclick="display_numeros(3)">3</button>
+    <button name="data-opera" onclick="suma()">+</button>
+    <button name="data-number" onclick="display_numeros(4)">4</button>
+    <button name="data-number" onclick="display_numeros(5)">5</button>
+    <button name="data-number" onclick="display_numeros(6)">6</button>
+    <button name="data-opera" onclick="resta()">-</button>
+    <button name="data-number" onclick="display_numeros(7)">7</button>
+    <button name="data-number" onclick="display_numeros(8)">8</button>
+    <button name="data-number" onclick="display_numeros(9)">9</button>
+    <button name="data-opera" onclick="multiplica()">*</button>
+    <button name="data-delete" onclick="resetea()">C</button>
+    <button name="data-number" onclick="display_numeros(0)">0</button>
+    <button name="data-igual" onclick="resultado()">=</button>
+    <button name="data-opera" onclick="division()">/</button>
+
+</div>
+</body>
+</html>
