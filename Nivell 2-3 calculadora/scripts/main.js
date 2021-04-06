@@ -11,13 +11,13 @@ let p_result = false;
 
 function display_numeros(num){
     if (p_result == false){
-    document.getElementById("result").value = cifra + num;
-    cifra = document.getElementById("result").value;
+    result.value = cifra + num;
+    cifra = result.value;
     }else{
     cifra =num;
     acumulado = 0;
-    document.getElementById("result").value = cifra;
-    cifra = document.getElementById("result").value;
+    result.value = cifra;
+    cifra = result.value;
     p_result = false;
     sumar= false;
     restar = false;
@@ -34,12 +34,12 @@ function suma(){
     p_result = false;
     if(restar){
         acumulado = acumulado-parseFloat(cifra);
-        document.getElementById("result").value = acumulado;
+        result.value = acumulado;
     }else if(multiplicar || dividir){
-        document.getElementById("result").value = acumulado;
+        result.value = acumulado;
     }else{
     acumulado = acumulado+parseFloat(cifra);
-    document.getElementById("result").value = acumulado;
+    result.value = acumulado;
     }
     cifra= "";
     sumar= true;
@@ -53,11 +53,11 @@ function resta(){
     p_result = false;
     if(sumar){
     acumulado = acumulado + parseFloat(cifra);
-    document.getElementById("result").value = acumulado;
+    result.value = acumulado;
     }else if(multiplicar){
-        document.getElementById("result").value = acumulado;
+        result.value = acumulado;
     }else if(dividir){
-        document.getElementById("result").value = acumulado;
+        result.value = acumulado;
     }else{
         if(p_operacion){
             acumulado = parseFloat(cifra);
@@ -65,7 +65,7 @@ function resta(){
         }else{
             acumulado = acumulado - parseFloat(cifra);
         }
-    document.getElementById("result").value = acumulado;
+        result.value = acumulado;
     }
     cifra= "";
     sumar= false;
@@ -78,7 +78,7 @@ function multiplica(){
     p_result = false;
     if(sumar|| restar || dividir){
         acumulado = acumulado;
-        document.getElementById("result").value = acumulado;
+        result.value = acumulado;
     }else if(p_multiplicacion){
         acumulado = 1;
         acumulado = acumulado * parseFloat(cifra);
@@ -86,7 +86,7 @@ function multiplica(){
     }else{
         acumulado = acumulado * parseFloat(cifra);
     }
-    document.getElementById("result").value = acumulado;
+    result.value = acumulado;
 
     cifra= "";
     multiplicar = true;
@@ -99,7 +99,7 @@ function division(){
     p_result = false;
     if(sumar || restar || multiplicar){
         acumulado = acumulado;
-        document.getElementById("result").value = acumulado;
+        result.value = acumulado;
     }else if(p_division){
         acumulado = 1;
         acumulado = parseFloat(cifra)/acumulado;
@@ -107,7 +107,7 @@ function division(){
     }else{
         acumulado = acumulado / parseFloat(cifra);
     }
-    document.getElementById("result").value = acumulado;
+    result.value = acumulado;
 
     cifra= "";
     multiplicar = false;
@@ -118,26 +118,26 @@ function division(){
 
 function resultado(){
     if(sumar){
-        document.getElementById("result").value=acumulado + parseFloat(cifra);
+        result.value=acumulado + parseFloat(cifra);
         cifra=0;
         p_multiplicacion=true;
     }else if(restar){
-        document.getElementById("result").value= acumulado - parseFloat(cifra);
+        result.value = acumulado - parseFloat(cifra);
         cifra=0;
         p_multiplicacion=true;
     }else if(multiplicar){
-        document.getElementById("result").value= acumulado * parseFloat(cifra);
+        result.value = acumulado * parseFloat(cifra);
         cifra=1;
     }else if(dividir){
-        document.getElementById("result").value= acumulado / parseFloat(cifra);
+        result.value = acumulado / parseFloat(cifra);
         cifra=1;
     }
-    acumulado=parseFloat(document.getElementById("result").value);
+    acumulado=parseFloat(result.value);
     p_result = true;
 }
 
 function resetea(){
-    document.getElementById("result").value= 0;
+    result.value= 0;
     cifra= "";
     acumulado = 0;
     sumar = false;
