@@ -129,8 +129,14 @@ function resultado(){
         result.value = acumulado * parseFloat(cifra);
         cifra=1;
     }else if(dividir){
+        if (cifra == 0) {
+            result.value = 0;
+            resetea();
+            alert("No se puede dividir por 0")
+        }else{
         result.value = acumulado / parseFloat(cifra);
         cifra=1;
+        }
     }
     acumulado=parseFloat(result.value);
     p_result = true;
